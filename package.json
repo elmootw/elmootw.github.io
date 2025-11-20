@@ -2,7 +2,7 @@
   "name": "personal-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://elmootw.github.io/elmootw.github.io",
+  "homepage": "https://elmootw.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
