@@ -85,7 +85,7 @@ export default function CyberSecurityDetail() {
     { title: "資安服務：從市場需求到人才招募", event: "第三十四屆全國資訊安全會議 CISC 2024", date: "2024-08-30", link: null },
     { title: "資安服務：從市場需求到人才招募", event: "2024 HITCON X Yourator 資安職涯論壇", date: "2024-08-17", link: null },
     { title: "簡單易行的攻擊方法：資安檢測人員的工作日常", event: "北科大資安學程", date: "2024-05-23", link: null },
-    { title: "網站安全常見風險與風險管理", event: "果核數位 Hacker Talk 論壇", date: "2023-12-09", link: null },
+    { title: "網站安全常見風險與風險管理", event: "果核數位 Hacker Talk 論壇", date: "2023-12-09", link: "https://www.ithome.com.tw/pr/160545" },
     { title: "以資安治理角度理解 OWASP Top 10 2021", event: "CYBERSEC 2022 臺灣資安大會", date: "2022-09-20", link: "https://cybersec.ithome.com.tw/2022/session-page/833" },
     { title: "密碼學沒有入門", event: "NISRA", date: "2018-11-20", link: null },
     { title: "密碼學深入淺出", event: "HITCON GIRLS 資安萌芽推廣", date: "2017-07-08", link: "https://hitcon.kktix.cc/events/hitcongirls2017summer" },
