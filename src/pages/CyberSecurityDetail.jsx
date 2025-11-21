@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 
 export default function CyberSecurityDetail() {
   const [expandedJob, setExpandedJob] = useState(null);
-  const [activeSection, setActiveSection] = useState('work-experience');
 
   const workExperience = [
     {
@@ -108,8 +107,8 @@ export default function CyberSecurityDetail() {
           const h2 = element.querySelector('h2');
           if (h2) {
             const rect = h2.getBoundingClientRect();
-            // 檢查 h2 是否在視窗上方 150px 以內
-            if (rect.top <= 150 && rect.bottom > 0) {
+            // 檢查 h2 是否在視窗上方 200px 以內
+            if (rect.top <= 200 && rect.bottom > 0) {
               setActiveSection(section.id);
               break;
             }
@@ -127,7 +126,7 @@ export default function CyberSecurityDetail() {
       <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl md:text-5xl font-bold text-blue-900 mb-12">資安履歷</h1>
 
-        <section className="mb-12" id="work-experience">
+        <section className="mb-12 scroll-mt-20" id="work-experience">
           <div className="flex items-center mb-8">
             <Briefcase className="text-blue-800 mr-3" size={32} />
             <h2 className="text-2xl md:text-4xl font-bold text-blue-900">工作經驗</h2>
@@ -171,7 +170,7 @@ export default function CyberSecurityDetail() {
           </div>
         </section>
 
-        <section className="mb-12" id="speeches">
+        <section className="mb-12 scroll-mt-20" id="speeches">
           <div className="flex items-center mb-8">
             <Mic className="text-blue-800 mr-3" size={32} />
             <h2 className="text-2xl md:text-4xl font-bold text-blue-900">演講經歷</h2>
@@ -197,7 +196,7 @@ export default function CyberSecurityDetail() {
           </div>
         </section>
 
-        <section className="mb-12" id="certifications">
+        <section className="mb-12 scroll-mt-20" id="certifications">
           <div className="flex items-center mb-8">
             <Award className="text-blue-800 mr-3" size={32} />
             <h2 className="text-2xl md:text-4xl font-bold text-blue-900">專業證照</h2>
@@ -213,7 +212,7 @@ export default function CyberSecurityDetail() {
           </div>
         </section>
 
-        <section id="education">
+        <section className="scroll-mt-20" id="education">
           <div className="flex items-center mb-8">
             <BookOpen className="text-blue-800 mr-3" size={32} />
             <h2 className="text-2xl md:text-4xl font-bold text-blue-900">學歷</h2>
