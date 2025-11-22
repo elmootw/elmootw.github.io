@@ -1,30 +1,26 @@
-import { Camera, Image, ExternalLink, Youtube, Instagram } from 'lucide-react';
+import { Image, ExternalLink, Youtube, Instagram, Award } from 'lucide-react';
 
 export default function PhotographyDetail() {
-  const equipment = [
+  const experience = [
     {
-      category: "相機",
-      items: ["Fujifilm X-T4"]
+      event: "HITCON CMT 2024",
+      role: "攝影組"
     },
     {
-      category: "鏡頭",
-      items: ["Fujifilm 16-55mm F2.8 II", "Fujifilm 56mm F1.2", "Fujifilm 23mm F2"]
-    },
-    {
-      category: "其他器材",
-      items: ["OSMO Pocket 3", "Godox 神牛 V1 圓頭閃光燈"]
+      event: "HITCON CTF 2024",
+      role: "攝影組"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 py-8 px-4 md:py-12">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-5xl font-bold text-amber-900 mb-12">攝影作品集</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-amber-900 mb-12">攝影作品集</h1>
 
         <section className="mb-12">
           <div className="flex items-center mb-8">
             <Image className="text-amber-800 mr-3" size={32} />
-            <h2 className="text-2xl md:text-4xl font-bold text-amber-900">攝影作品</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-amber-900">攝影作品</h2>
           </div>
           <div className="space-y-6">
             <div className="bg-white rounded-lg p-8 shadow-sm text-center border-l-4 border-amber-700 hover:shadow-md transition-shadow">
@@ -89,23 +85,18 @@ export default function PhotographyDetail() {
 
         <section>
           <div className="flex items-center mb-8">
-            <Camera className="text-amber-800 mr-3" size={32} />
-            <h2 className="text-2xl md:text-4xl font-bold text-amber-900">攝影器材</h2>
+            <Award className="text-amber-800 mr-3" size={32} />
+            <h2 className="text-xl md:text-2xl font-bold text-amber-900">攝影經驗</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {equipment.map((equip, idx) => (
-              <div key={idx} className="bg-white rounded-lg p-6 shadow-sm border-t-4 border-amber-700 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-bold text-amber-900 mb-4">{equip.category}</h3>
-                <ul className="space-y-2">
-                  {equip.items.map((item, itemIdx) => (
-                    <li key={itemIdx} className="text-amber-900 flex items-center">
-                      <span className="text-amber-600 mr-3 flex-shrink-0">✓</span>
-                      <span className="text-sm md:text-base">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="bg-white rounded-lg p-6 shadow-sm border-l-4 border-amber-700">
+            <ul className="space-y-3">
+              {experience.map((exp, idx) => (
+                <li key={idx} className="text-amber-900 flex items-start">
+                  <span className="text-amber-600 mr-3 flex-shrink-0 mt-1">•</span>
+                  <span className="text-base">{exp.event} {exp.role}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </div>

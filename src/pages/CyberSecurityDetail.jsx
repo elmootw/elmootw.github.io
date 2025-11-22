@@ -93,8 +93,8 @@ export default function CyberSecurityDetail() {
   ];
 
   const sections = [
-    { id: 'work-experience', label: '工作經驗', icon: Briefcase },
-    { id: 'speeches', label: '演講經歷', icon: Mic },
+    { id: 'work-experience', label: '工作經歷', icon: Briefcase },
+    { id: 'speeches', label: '演講經驗', icon: Mic },
     { id: 'certifications', label: '專業證照', icon: Award },
     { id: 'education', label: '學歷', icon: BookOpen }
   ];
@@ -124,12 +124,12 @@ export default function CyberSecurityDetail() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-100 via-stone-50 to-stone-100 py-8 px-4 md:py-12">
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl md:text-5xl font-bold text-blue-900 mb-12">資安履歷</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-12">資安履歷</h1>
 
         <section className="mb-12 scroll-mt-20" id="work-experience">
           <div className="flex items-center mb-8">
             <Briefcase className="text-blue-800 mr-3" size={32} />
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-900">工作經驗</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900">工作經歷</h2>
           </div>
           <div className="space-y-6">
             {workExperience.map((job, idx) => (
@@ -139,7 +139,7 @@ export default function CyberSecurityDetail() {
                   className="w-full p-6 text-left flex flex-col md:flex-row md:justify-between md:items-start hover:bg-blue-50 transition-colors"
                 >
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-blue-900">{job.position}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-blue-900">{job.position}</h3>
                     <p className="text-blue-700 font-semibold">{job.company}</p>
                   </div>
                   <div className="text-right mt-2 md:mt-0 flex items-center gap-3">
@@ -173,7 +173,7 @@ export default function CyberSecurityDetail() {
         <section className="mb-12 scroll-mt-20" id="speeches">
           <div className="flex items-center mb-8">
             <Mic className="text-blue-800 mr-3" size={32} />
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-900">演講經歷</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900">演講經驗</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {speeches.map((speech, idx) => (
@@ -199,7 +199,7 @@ export default function CyberSecurityDetail() {
         <section className="mb-12 scroll-mt-20" id="certifications">
           <div className="flex items-center mb-8">
             <Award className="text-blue-800 mr-3" size={32} />
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-900">專業證照</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900">專業證照</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {certifications.map((cert, idx) => (
@@ -215,7 +215,7 @@ export default function CyberSecurityDetail() {
         <section className="scroll-mt-20" id="education">
           <div className="flex items-center mb-8">
             <BookOpen className="text-blue-800 mr-3" size={32} />
-            <h2 className="text-2xl md:text-4xl font-bold text-blue-900">學歷</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-blue-900">學歷</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {education.map((edu, idx) => (

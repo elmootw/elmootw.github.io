@@ -20,7 +20,7 @@ export default function Home() {
               </div>
               <div className="p-6 bg-white">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3 text-blue-900">資訊安全顧問</h2>
-                <p className="text-blue-800 mb-4 line-clamp-3">擁有 7+ 年資安顧問服務經驗，專精於滲透測試、應用安全與資安事件應變。目前領導資安專業團隊，致力於提升企業安全防禦。</p>
+                <p className="text-blue-800 mb-4 line-clamp-3">擁有 8+ 年資安顧問服務經驗，專精於滲透測試、應用安全與資安事件應變。目前領導資安專業團隊，致力於提升企業安全防禦。</p>
                 <div className="flex items-center text-blue-700 font-semibold hover:text-blue-900">
                   查看履歷 <ArrowRight size={20} className="ml-2" />
                 </div>
@@ -35,7 +35,7 @@ export default function Home() {
               </div>
               <div className="p-6 bg-white">
                 <h2 className="text-2xl md:text-3xl font-bold mb-3 text-amber-900">攝影師</h2>
-                <p className="text-amber-800 mb-4 line-clamp-3">使用 Fujifilm 專業器材進行創意攝影，擅長人像、風景與商業攝影。以獨特的視角捕捉每個精彩時刻。</p>
+                <p className="text-amber-800 mb-4 line-clamp-3">擅長人像、風景與商業攝影。以獨特的視角捕捉每個精彩時刻。</p>
                 <div className="flex items-center text-amber-800 font-semibold hover:text-amber-900">
                   查看作品 <ArrowRight size={20} className="ml-2" />
                 </div>
