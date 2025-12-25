@@ -6,21 +6,14 @@
     <title>Portfolio - 資安顧問 & 攝影師</title>
     <script type="text/javascript">
       var pathname = window.location.pathname;
-      var search = window.location.search;
-      var hash = window.location.hash;
       
-      // 跳過子資料夾路由（如 /Travel-Settle-Up/）
-      if (/^\/[^/]+\//.test(pathname) && pathname !== '/') {
+      // 如果包含子路由（如 /Travel-Settle-Up/），不處理
+      if (pathname.split('/').filter(Boolean).length > 0 && pathname !== '/') {
         return;
       }
       
-      // 只有主頁路由才重定向到 index.html
-      if (pathname !== '/' && !pathname.endsWith('.html')) {
-        if (pathname.endsWith('/')) {
-          pathname = pathname.slice(0, -1);
-        }
-        window.location.replace('/?redirect=' + encodeURIComponent(pathname + search + hash));
-      }
+      // 只處理根路由的 SPA
+      window.location.replace('/');
     </script>
   </head>
   <body>
