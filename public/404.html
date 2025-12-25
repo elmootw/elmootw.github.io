@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - 資安顧問 & 攝影師</title>
     <script type="text/javascript">
-      // 單頁應用 (SPA) 路由修復
       var pathname = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
       
-      // 移除末尾斜線
-      if (pathname !== '/' && pathname.endsWith('/')) {
-        pathname = pathname.slice(0, -1);
+      // 跳過子資料夾路由（如 /Travel-Settle-Up/）
+      if (/^\/[^/]+\//.test(pathname) && pathname !== '/') {
+        return;
       }
       
-      // 重定向到首頁，保存原始路徑
-      window.location.replace('/?redirect=' + encodeURIComponent(pathname + search + hash));
+      // 只有主頁路由才重定向到 index.html
+      if (pathname !== '/' && !pathname.endsWith('.html')) {
+        if (pathname.endsWith('/')) {
+          pathname = pathname.slice(0, -1);
+        }
+        window.location.replace('/?redirect=' + encodeURIComponent(pathname + search + hash));
+      }
     </script>
   </head>
   <body>
