@@ -5,28 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio - 資安顧問 & 攝影師</title>
     <script type="text/javascript">
-      // 單頁應用 (SPA) 路由修復 - 僅處理首頁專案的路由
+      // 單頁應用 (SPA) 路由修復
       var pathname = window.location.pathname;
       var search = window.location.search;
       var hash = window.location.hash;
       
-      // 檢查是否為子專案路徑（如 /Travel-Settle-Up/）
-      var isSubproject = /^\/[a-zA-Z0-9-]+\//.test(pathname);
-      
-      if (isSubproject) {
-        // 子專案有自己的 404.html，不做任何處理
-        return;
+      // 移除末尾斜線
+      if (pathname !== '/' && pathname.endsWith('/')) {
+        pathname = pathname.slice(0, -1);
       }
       
-      // 僅處理主專案的路由
-      if (pathname !== '/' && !pathname.endsWith('.html')) {
-        // 移除末尾斜線
-        if (pathname.endsWith('/')) {
-          pathname = pathname.slice(0, -1);
-        }
-        // 重定向到首頁，保存原始路徑
-        window.location.replace('/?redirect=' + encodeURIComponent(pathname + search + hash));
-      }
+      // 重定向到首頁，保存原始路徑
+      window.location.replace('/?redirect=' + encodeURIComponent(pathname + search + hash));
     </script>
   </head>
   <body>
