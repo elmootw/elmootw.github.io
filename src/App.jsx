@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import CyberSecurityDetail from './pages/CyberSecurityDetail';
 import PhotographyDetail from './pages/PhotographyDetail';
@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cybersecurity" element={<CyberSecurityDetail />} />
         <Route path="/photography" element={<PhotographyDetail />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
