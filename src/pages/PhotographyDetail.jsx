@@ -26,7 +26,7 @@ export default function PhotographyDetail() {
             <div className="bg-white rounded-lg p-8 shadow-sm text-center border-l-4 border-amber-600 hover:shadow-md transition-shadow">
               <p className="text-amber-900 mb-6 text-lg">探索我的攝影作品集，欣賞不同風格的創意攝影作品。</p>
               <a
-                href="https://your-photography-portfolio.com"
+                href="https://filedn.com/loSu3MwhU1Vpp461I9eR4vz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
