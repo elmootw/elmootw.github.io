@@ -5,12 +5,45 @@ export default function CyberSecurityDetail() {
   const [expandedJob, setExpandedJob] = useState(null);
   const [activeSection, setActiveSection] = useState(null);
 
+  // 計算時長（支持開始日期或完整日期範圍）
+  const calculateDuration = (periodStr) => {
+    const parts = periodStr.split(' - ');
+    const startDateStr = parts[0];
+    const endDateStr = parts[1];
+    
+    const [startYear, startMonth] = startDateStr.split('/').map(Number);
+    
+    let endYear, endMonth;
+    if (endDateStr === '至今') {
+      const now = new Date();
+      endYear = now.getFullYear();
+      endMonth = now.getMonth() + 1;
+    } else {
+      [endYear, endMonth] = endDateStr.split('/').map(Number);
+    }
+    
+    let years = endYear - startYear;
+    let months = endMonth - startMonth;
+    
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+    
+    if (years > 0 && months > 0) {
+      return `${years} 年 ${months} 個月`;
+    } else if (years > 0) {
+      return `${years} 年`;
+    } else {
+      return `${months} 個月`;
+    }
+  };
+
   const workExperience = [
     {
       company: "雲力橘子數位股份有限公司",
       position: "資安服務部 - 經理",
       period: "2024/04 - 至今",
-      duration: "1+ 年",
       description: [
         "領導 8 人資安專業團隊，統籌管理年度預算及資源配置",
         "制定部門策略規劃與 OKR，建立標準化服務流程及審核機制",
@@ -24,7 +57,6 @@ export default function CyberSecurityDetail() {
       company: "果核數位股份有限公司",
       position: "資訊安全部 - 副理",
       period: "2022/05 - 2024/03",
-      duration: "1 年 11 個月",
       description: [
         "負責資安服務專案規劃、資源分配與成本評估",
         "主導跨產業網站 API、應用程式及行動 APP 滲透測試，服務金融、遊戲、電商及支付領域客戶",
@@ -39,7 +71,6 @@ export default function CyberSecurityDetail() {
       company: "詮睿科技股份有限公司",
       position: "資安顧問服務處 - 資安顧問",
       period: "2019/02 - 2022/04",
-      duration: "3 年 3 個月",
       description: [
         "主導網站 API、應用程式及行動 APP 滲透測試專案，涵蓋金融保險、遊戲、電商、電子票券及支付產業",
         "提供資安事件快速應變與調查服務",
@@ -54,7 +85,6 @@ export default function CyberSecurityDetail() {
       company: "果核數位股份有限公司",
       position: "資訊安全部 - 資安工程師",
       period: "2017/11 - 2019/02",
-      duration: "1 年 3 個月",
       description: [
         "執行網站 API、應用程式及行動 APP 滲透測試專案，涵蓋銀行、遊戲、電商、電子票券及支付行業",
         "使用 Django 框架開發自動化報告生成系統",
@@ -80,6 +110,7 @@ export default function CyberSecurityDetail() {
   ];
 
   const speeches = [
+    { title: "我的 CVE 不是你的 CVE", event: "DEVCORE - /dev/meet 資安小聚", date: "2026/04/22", link: null },
     { title: "How to Get Away with Hacking", event: "北科大資安社", date: "2025/05/21", link: null },
     { title: "數位轉型下的資安挑戰：企業需求與人才機會", event: "CYBERSEC 2025 臺灣資安大會", date: "2025/04/17", link: "https://cybersec.ithome.com.tw/2025/session-page/3507" },
     { title: "從滲透測試角度看身份驗證的重要性", event: "okta | Akamai | 果核 | 奧登 - 企業資安升級：從零信任架構到 API 防護", date: "2024-10-23", link: null },
@@ -146,7 +177,7 @@ export default function CyberSecurityDetail() {
                   <div className="text-right mt-2 md:mt-0 flex items-center gap-3">
                     <div>
                       <p className="text-sky-700 text-sm font-semibold">{job.period}</p>
-                      <p className="text-sky-600 text-xs">{job.duration}</p>
+                      <p className="text-sky-600 text-xs">{calculateDuration(job.period)}</p>
                     </div>
                     <ChevronDown
                       size={20}
