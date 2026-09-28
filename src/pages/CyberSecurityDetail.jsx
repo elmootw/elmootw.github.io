@@ -352,7 +352,6 @@ export default function CyberSecurityDetail() {
                   <img
                     src={cert.image}
                     alt={cert.name}
-                    loading="lazy"
                     decoding="async"
                     className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
                   />
