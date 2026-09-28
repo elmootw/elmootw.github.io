@@ -6,7 +6,8 @@
     <title>Portfolio - 資安顧問 & 攝影師</title>
     <script type="text/javascript">
       // 將不存在的路由重定向到根目錄，讓 React Router 處理
-      const path = window.location.pathname.replace(/\/$/, '') || '/';
+      const path = (window.location.pathname.replace(/\/$/, '') || '/')
+        + window.location.search + window.location.hash;
       sessionStorage.redirect = path;
       window.location.href = '/';
     </script>
