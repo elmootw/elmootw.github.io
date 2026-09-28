@@ -113,13 +113,13 @@ export default function CyberSecurityDetail() {
   ];
 
   const certifications = [
-    { name: "CPENT", image: "/images/certifications/CPENT.png", expiry: "2027/03/17" },
-    { name: "LPT", image: "/images/certifications/LPT.png", expiry: "2027/03/17" },
-    { name: "CEH", image: "/images/certifications/CEH.png", expiry: "2027/06/30" },
-    { name: "CHFI", image: "/images/certifications/CHFI.png", expiry: "2027/10/01" },
-    { name: "ISO 27001:2022 LA", image: "/images/certifications/ISO27001.png", expiry: "無期限" },
-    { name: "ISO 27701:2025 LA", image: "/images/certifications/ISO27701.png", expiry: "無期限" },
-    { name: "ECSA", image: "/images/certifications/ECSA.png", expiry: "2026/01/01" }
+    { name: "CPENT", image: "/images/certifications/CPENT.webp", expiry: "2027/03/17" },
+    { name: "LPT", image: "/images/certifications/LPT.webp", expiry: "2027/03/17" },
+    { name: "CEH", image: "/images/certifications/CEH.webp", expiry: "2027/06/30" },
+    { name: "CHFI", image: "/images/certifications/CHFI.webp", expiry: "2027/10/01" },
+    { name: "ISO 27001:2022 LA", image: "/images/certifications/ISO27001.webp", expiry: "無期限" },
+    { name: "ISO 27701:2025 LA", image: "/images/certifications/ISO27701.webp", expiry: "無期限" },
+    { name: "ECSA", image: "/images/certifications/ECSA.webp", expiry: "2026/01/01" }
   ];
 
   const speeches = [
@@ -352,6 +352,8 @@ export default function CyberSecurityDetail() {
                   <img
                     src={cert.image}
                     alt={cert.name}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
