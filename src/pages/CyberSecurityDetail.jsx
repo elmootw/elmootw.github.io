@@ -6,8 +6,10 @@ export default function CyberSecurityDetail() {
   const [expandedJob, setExpandedJob] = useState(0);
   const [activeSection, setActiveSection] = useState(null);
   const [showAllSpeeches, setShowAllSpeeches] = useState(false);
+  const [showAllCerts, setShowAllCerts] = useState(false);
 
   const SPEECH_PREVIEW_COUNT = 6;
+  const CERT_PREVIEW_COUNT = 6;
 
   // 計算時長（支持開始日期或完整日期範圍）
   const calculateDuration = (periodStr) => {
@@ -126,7 +128,7 @@ export default function CyberSecurityDetail() {
   ];
 
   const speeches = [
-    { title: "AI 時代的資安工作與人才需求", event: "高雄醫學大學", date: "2026/09/29", link: null },
+    { title: "AI 時代的資安工作與人才需求", event: "高雄醫學大學 - 數位公民資訊安全素養", date: "2026/09/29", link: null },
     { title: "我的 CVE 不是你的 CVE", event: "DEVCORE - /dev/meet 資安小聚", date: "2026/04/22", link: null },
     { title: "How to Get Away with Hacking", event: "北科大資安社", date: "2025/05/21", link: null },
     { title: "數位轉型下的資安挑戰：企業需求與人才機會", event: "CYBERSEC 2025 臺灣資安大會", date: "2025/04/17", link: "https://cybersec.ithome.com.tw/2025/session-page/3507" },
@@ -356,7 +358,7 @@ export default function CyberSecurityDetail() {
         <section className="mb-16 scroll-mt-24" id="certifications">
           <SectionTitle icon={Award} path="certifications" count={certifications.length} />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {certifications.map((cert, idx) => (
+            {(showAllCerts ? certifications : certifications.slice(0, CERT_PREVIEW_COUNT)).map((cert, idx) => (
               <div
                 key={idx}
                 className="group overflow-hidden rounded-lg border border-terminal-line bg-terminal-panel transition-all hover:border-terminal-cyan/50 hover:shadow-[0_0_20px_rgba(56,225,255,0.12)]"
@@ -376,6 +378,15 @@ export default function CyberSecurityDetail() {
               </div>
             ))}
           </div>
+          {certifications.length > CERT_PREVIEW_COUNT && (
+            <button
+              onClick={() => setShowAllCerts(!showAllCerts)}
+              className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border border-terminal-line bg-terminal-panel px-5 py-3 font-mono text-xs text-terminal-green transition-colors hover:border-terminal-green/50"
+            >
+              {showAllCerts ? 'less' : `ls -a  # +${certifications.length - CERT_PREVIEW_COUNT}`}
+              <ChevronDown size={14} className={`transition-transform ${showAllCerts ? 'rotate-180' : ''}`} />
+            </button>
+          )}
         </section>
 
         {/* 學歷 */}
